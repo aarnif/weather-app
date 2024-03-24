@@ -1,6 +1,12 @@
-const path = require("path");
+import path from "path";
+import { fileURLToPath } from "url";
+import webpack from "webpack";
+import "dotenv/config";
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const config = {
   mode: "development",
   entry: "./src/index.js",
   output: {
@@ -30,4 +36,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    }),
+  ],
 };
+
+export default config;
