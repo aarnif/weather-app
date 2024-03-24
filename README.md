@@ -1,2 +1,3 @@
-# webpack-with-tailwind-css
-Ready to use webpack configuration with tailwind css
+# odin-weather-app
+
+The Odin Project's Full Stack JavaScript Course Project: Weather App
