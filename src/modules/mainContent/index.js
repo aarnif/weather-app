@@ -2,6 +2,7 @@ import loadingBox from "../loadingBox.js";
 import errorBox from "../errorBox.js";
 import displayWeatherSummary from "./weatherSummary.js";
 import displayTodaysWeatherInfo from "./todaysWeatherInfo.js";
+import displayNext24HoursForecast from "./next24HoursForecast.js";
 
 const mainContent = (weatherData) => {
   const { isLoading, isError, displayUnit } = weatherData;
@@ -41,6 +42,13 @@ const mainContent = (weatherData) => {
   );
 
   mainContentDiv.appendChild(todaysWeatherInfoElement);
+
+  const next24HoursForecastElement = displayNext24HoursForecast(
+    displayUnit,
+    next24HourForecast.forecast24Hour
+  );
+
+  mainContentDiv.appendChild(next24HoursForecastElement);
 
   return mainContentDiv;
 };
