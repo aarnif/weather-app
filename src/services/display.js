@@ -1,4 +1,4 @@
-import addMainContent from "../modules/mainContent.js";
+import addMainContent from "../modules/mainContent/index.js";
 
 const content = document.getElementById("content");
 

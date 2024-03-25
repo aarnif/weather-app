@@ -52,7 +52,7 @@ const getAllWeatherData = async (location) => {
     date: currentWeather.current.last_updated,
     sunrise: astronomy.astronomy.astro.sunrise,
     sunset: astronomy.astronomy.astro.sunset,
-    tamperatureC: currentWeather.current.feelslike_c,
+    temperatureC: currentWeather.current.feelslike_c,
     temperatureF: currentWeather.current.feelslike_f,
     humidity: currentWeather.current.humidity,
     precapitation: currentWeather.current.precip_mm,
