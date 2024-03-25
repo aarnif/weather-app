@@ -19,4 +19,8 @@ const extract24HourWeatherInfo = (forecast) => {
   return filteredArray.slice(0, 24);
 };
 
-export default { extract24HourWeatherInfo };
+const convertToMetersPerSecond = (windspeedKmHour) => {
+  return windspeedKmHour * (1000 / 3600);
+};
+
+export default { extract24HourWeatherInfo, convertToMetersPerSecond };

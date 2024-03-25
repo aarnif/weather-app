@@ -1,6 +1,7 @@
 import loadingBox from "../loadingBox.js";
 import errorBox from "../errorBox.js";
 import displayWeatherSummary from "./weatherSummary.js";
+import displayTodaysWeatherInfo from "./todaysWeatherInfo.js";
 
 const mainContent = (weatherData) => {
   const { isLoading, isError, displayUnit } = weatherData;
@@ -33,6 +34,13 @@ const mainContent = (weatherData) => {
   );
 
   mainContentDiv.appendChild(weatherSummaryElement);
+
+  const todaysWeatherInfoElement = displayTodaysWeatherInfo(
+    displayUnit,
+    todaysWeatherInfo
+  );
+
+  mainContentDiv.appendChild(todaysWeatherInfoElement);
 
   return mainContentDiv;
 };
