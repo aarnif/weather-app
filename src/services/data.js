@@ -28,17 +28,17 @@ const getForecast = async (location) => {
 };
 
 const getAllWeatherData = async (location) => {
-  let currentWeather;
-  let astronomy;
-  let forecast;
+  const fetchData = await Promise.all([
+    getCurrentWeather(location),
+    getAstronomy(location),
+    getForecast(location),
+  ]);
 
-  try {
-    currentWeather = await getCurrentWeather(location);
-    astronomy = await getAstronomy(location);
-    forecast = await getForecast(location);
-  } catch (error) {
-    return error;
+  if (fetchData.some((data) => data.error)) {
+    throw new Error("Failed to fetch weather data");
   }
+
+  const [currentWeather, astronomy, forecast] = fetchData;
 
   const todaysWeatherSummary = {
     location: currentWeather.location.name,
