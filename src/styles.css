@@ -49,4 +49,10 @@
   .change-or-rain-box {
     @apply h-6 text-blue-600;
   }
+  .future-forecast-container {
+    @apply w-full flex justify-center items-center mb-16 pb-16 border-b border-slate-500;
+  }
+  .future-forecast-list-item {
+    @apply w-40 flex justify-center items-center;
+  }
 }

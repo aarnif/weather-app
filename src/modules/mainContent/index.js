@@ -46,19 +46,19 @@ const mainContent = (weatherData) => {
 
   mainContentDiv.appendChild(next24HoursForecastElement);
 
-  const todaysWeatherInfoElement = displayTodaysWeatherInfo(
-    displayUnit,
-    todaysWeatherInfo
-  );
-
-  mainContentDiv.appendChild(todaysWeatherInfoElement);
-
   const futureDaysForecastElement = displayFutureDaysForecast(
     displayUnit,
     futureDaysForecast.forecastDays
   );
 
   mainContentDiv.appendChild(futureDaysForecastElement);
+
+  const todaysWeatherInfoElement = displayTodaysWeatherInfo(
+    displayUnit,
+    todaysWeatherInfo
+  );
+
+  mainContentDiv.appendChild(todaysWeatherInfoElement);
 
   return mainContentDiv;
 };
