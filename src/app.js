@@ -4,6 +4,9 @@ import displayService from "./services/display.js";
 
 const app = () => {
   const searchForm = document.getElementById("search-form");
+  const changeDisplayUnitButton = document.getElementById(
+    "change-display-unit"
+  );
 
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -31,6 +34,20 @@ const app = () => {
         console.error(error);
         displayService.updatePage(weatherData);
       });
+  });
+
+  changeDisplayUnitButton.addEventListener("click", () => {
+    console.log("Change temperature unit to:", weatherData.displayUnit);
+    weatherData.displayUnit =
+      weatherData.displayUnit === "Celcius" ? "Fahrenheit" : "Celcius";
+
+    changeDisplayUnitButton.textContent = `Display in ${
+      weatherData.displayUnit === "Celcius" ? "F" : "C"
+    }°`;
+
+    if (weatherData.data) {
+      displayService.updatePage(weatherData);
+    }
   });
 };
 
