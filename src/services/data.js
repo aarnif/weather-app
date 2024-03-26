@@ -44,6 +44,10 @@ const getAllWeatherData = async (location) => {
     location: currentWeather.location.name,
     temperatureC: currentWeather.current.temp_c,
     temperatureF: currentWeather.current.temp_f,
+    lowTempC: forecast.forecast.forecastday[0].day.mintemp_c,
+    lowTempF: forecast.forecast.forecastday[0].day.mintemp_f,
+    highTempC: forecast.forecast.forecastday[0].day.maxtemp_c,
+    highTempF: forecast.forecast.forecastday[0].day.maxtemp_f,
     conditionText: currentWeather.current.condition.text,
     conditionIcon: currentWeather.current.condition.icon,
   };

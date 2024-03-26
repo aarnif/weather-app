@@ -3,10 +3,28 @@ import dataService from "./services/data.js";
 import displayService from "./services/display.js";
 
 const app = () => {
+  const location = "Helsinki";
   const searchForm = document.getElementById("search-form");
   const changeDisplayUnitButton = document.getElementById(
     "change-display-unit"
   );
+
+  dataService
+    .getAllWeatherData(location)
+    .then((data) => {
+      weatherData.isLoading = false;
+      weatherData.isError = false;
+      weatherData.data = data;
+      console.log(weatherData);
+      displayService.updatePage(weatherData);
+    })
+    .catch((error) => {
+      weatherData.isLoading = false;
+      weatherData.isError = true;
+      weatherData.data = null;
+      console.error(error);
+      displayService.updatePage(weatherData);
+    });
 
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
