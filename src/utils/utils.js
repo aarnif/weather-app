@@ -27,9 +27,18 @@ const getWeekday = (date) => {
   return format(date, "EEEE");
 };
 
+const sliceArray = (index, array, howMany) => {
+  if (array.length < howMany) {
+    return array;
+  } else {
+    return array.slice(index, index + howMany);
+  }
+};
+
 export default {
   TODAY,
   extract24HourWeatherInfo,
   convertToMetersPerSecond,
   getWeekday,
+  sliceArray,
 };

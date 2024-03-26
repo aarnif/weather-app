@@ -25,12 +25,10 @@ const mainContent = (weatherData) => {
 
   const {
     todaysWeatherSummary,
-    todaysWeatherInfo,
     next24HourForecast,
+    todaysWeatherInfo,
     futureDaysForecast,
   } = weatherData.data;
-
-  console.log(next24HourForecast);
 
   console.log("Updating content for location", todaysWeatherSummary.location);
 
@@ -41,19 +39,19 @@ const mainContent = (weatherData) => {
 
   mainContentDiv.appendChild(weatherSummaryElement);
 
-  const todaysWeatherInfoElement = displayTodaysWeatherInfo(
-    displayUnit,
-    todaysWeatherInfo
-  );
-
-  mainContentDiv.appendChild(todaysWeatherInfoElement);
-
   const next24HoursForecastElement = displayNext24HoursForecast(
     displayUnit,
     next24HourForecast.forecast24Hour
   );
 
   mainContentDiv.appendChild(next24HoursForecastElement);
+
+  const todaysWeatherInfoElement = displayTodaysWeatherInfo(
+    displayUnit,
+    todaysWeatherInfo
+  );
+
+  mainContentDiv.appendChild(todaysWeatherInfoElement);
 
   const futureDaysForecastElement = displayFutureDaysForecast(
     displayUnit,

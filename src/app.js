@@ -2,6 +2,8 @@ import weatherData from "./data.js";
 import dataService from "./services/data.js";
 import displayService from "./services/display.js";
 
+let index = 0;
+
 const app = () => {
   const location = "Helsinki";
   const searchForm = document.getElementById("search-form");
