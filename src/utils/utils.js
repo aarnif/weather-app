@@ -23,4 +23,13 @@ const convertToMetersPerSecond = (windspeedKmHour) => {
   return windspeedKmHour * (1000 / 3600);
 };
 
-export default { extract24HourWeatherInfo, convertToMetersPerSecond };
+const getWeekday = (date) => {
+  return format(date, "EEEE");
+};
+
+export default {
+  TODAY,
+  extract24HourWeatherInfo,
+  convertToMetersPerSecond,
+  getWeekday,
+};
