@@ -1,18 +1,8 @@
 import utils from "../../utils/utils";
 
-const displayFutureDaysForecast = (displayUnit, futureDaysForecast) => {
-  const futureForecastDiv = document.createElement("div");
-  futureForecastDiv.className = "future-forecast-container";
-
-  const futureForecastContent = document.createElement("div");
-  futureForecastContent.className = "flex-grow flex flex-wrap justify-center";
-
-  const daysList = document.createElement("ul");
-  daysList.className =
-    "flex-grow max-w-[1000px] flex flex-col justify-center items-center";
-
+const headerRow = () => {
   const titleRow = document.createElement("ul");
-  titleRow.className = "w-full flex justify-around items-center";
+  titleRow.className = "header-row";
 
   const titleRowItems = ["Day", "Weather", "Average", "Low", "High"];
 
@@ -23,11 +13,32 @@ const displayFutureDaysForecast = (displayUnit, futureDaysForecast) => {
     titleRow.appendChild(titleRowItemElement);
   });
 
-  daysList.appendChild(titleRow);
+  return titleRow;
+};
+
+const displayFutureDaysForecast = (displayUnit, futureDaysForecast) => {
+  const futureForecastDiv = document.createElement("div");
+  futureForecastDiv.className = "future-forecast-container";
+
+  const futureForecastContent = document.createElement("div");
+  futureForecastContent.className = "future-forecast-content";
+
+  const daysList = document.createElement("ul");
+  daysList.className = "future-forecast-list";
+
+  const daysListItem = document.createElement("li");
+  daysListItem.className = "future-forecast-list-row";
+
+  const titleRow = headerRow();
+  daysListItem.appendChild(titleRow);
+
+  daysList.appendChild(daysListItem);
 
   futureDaysForecast.forEach((day) => {
+    const daysWeatherInfoItem = document.createElement("li");
+    daysWeatherInfoItem.className = "future-forecast-list-row";
     const daysWeatherInfo = document.createElement("ul");
-    daysWeatherInfo.className = "w-full flex justify-around items-center";
+    daysWeatherInfo.className = "future-forecast-list-row-items";
 
     const avgTemp =
       displayUnit === "Celsius" ? day.averageTempC : day.averageTempF;
@@ -61,7 +72,8 @@ const displayFutureDaysForecast = (displayUnit, futureDaysForecast) => {
       daysWeatherInfo.appendChild(daysWetherInfoItem);
     });
 
-    daysList.appendChild(daysWeatherInfo);
+    daysWeatherInfoItem.appendChild(daysWeatherInfo);
+    daysList.appendChild(daysWeatherInfoItem);
   });
   futureForecastContent.appendChild(daysList);
 

@@ -3,11 +3,10 @@ import utils from "../../utils/utils.js";
 const displayTodaysWeatherInfo = (displayUnit, todaysWeatherInfo) => {
   const percent = "%";
   const weatherInfoContainer = document.createElement("div");
-  weatherInfoContainer.className = "flex justify-center items-center";
+  weatherInfoContainer.className = "todays-weather-container";
 
   const weatherInfoContent = document.createElement("div");
-  weatherInfoContent.className =
-    "flex-grow max-w-[1000px] flex justify-center items-center";
+  weatherInfoContent.className = "todays-weather-content";
 
   const weatherInfoList = document.createElement("ul");
   weatherInfoList.className = "w-full";

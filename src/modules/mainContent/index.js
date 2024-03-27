@@ -46,19 +46,31 @@ const mainContent = (weatherData) => {
 
   mainContentDiv.appendChild(next24HoursForecastElement);
 
+  const futureDaysForecastAndtodaysWeatherInfoContainer =
+    document.createElement("div");
+
+  futureDaysForecastAndtodaysWeatherInfoContainer.className =
+    "future-forecast-and-todays-weather-container";
+
   const futureDaysForecastElement = displayFutureDaysForecast(
     displayUnit,
     futureDaysForecast.forecastDays
   );
 
-  mainContentDiv.appendChild(futureDaysForecastElement);
+  futureDaysForecastAndtodaysWeatherInfoContainer.appendChild(
+    futureDaysForecastElement
+  );
 
   const todaysWeatherInfoElement = displayTodaysWeatherInfo(
     displayUnit,
     todaysWeatherInfo
   );
 
-  mainContentDiv.appendChild(todaysWeatherInfoElement);
+  futureDaysForecastAndtodaysWeatherInfoContainer.appendChild(
+    todaysWeatherInfoElement
+  );
+
+  mainContentDiv.appendChild(futureDaysForecastAndtodaysWeatherInfoContainer);
 
   return mainContentDiv;
 };

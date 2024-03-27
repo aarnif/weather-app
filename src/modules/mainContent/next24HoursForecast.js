@@ -43,6 +43,10 @@ const icon = (iconElement, id, callback) => {
 const createHoursList = (displayUnit, next24HourForecast) => {
   const hoursListContainer = document.createElement("div");
   hoursListContainer.className = "hours-list-container";
+
+  const hoursListContent = document.createElement("div");
+  hoursListContent.className = "hours-list-content";
+
   const hoursList = document.createElement("ul");
   hoursList.className = "hours-list";
 
@@ -59,7 +63,7 @@ const createHoursList = (displayUnit, next24HourForecast) => {
     howManyHoursIsShown
   );
 
-  hoursListContainer.appendChild(leftArrowIcon);
+  hoursListContent.appendChild(leftArrowIcon);
 
   hoursArray.forEach((hour) => {
     const singleHour = document.createElement("ul");
@@ -99,9 +103,11 @@ const createHoursList = (displayUnit, next24HourForecast) => {
     hoursList.appendChild(singleHour);
   });
 
-  hoursListContainer.appendChild(hoursList);
+  hoursListContent.appendChild(hoursList);
 
-  hoursListContainer.appendChild(rightArrowIcon);
+  hoursListContent.appendChild(rightArrowIcon);
+
+  hoursListContainer.appendChild(hoursListContent);
 
   return hoursListContainer;
 };
