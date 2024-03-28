@@ -9,6 +9,9 @@
   #wrapper {
     @apply flex flex-col h-screen;
   }
+  .loading-icon {
+    @apply relative top-[-150px] w-20 h-20 fill-current animate-spin;
+  }
   .box-style {
     @apply bg-slate-400 bg-opacity-50 rounded-lg border-2 border-slate-50 border-opacity-0;
   }
