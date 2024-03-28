@@ -70,7 +70,13 @@
     @apply flex flex-wrap justify-center;
   }
   .arrow-icon {
-    @apply w-14 fill-current hover:text-slate-600 active-effect transition-effect;
+    @apply w-14 fill-current hover:translate-x-2 active-effect transition-effect;
+  }
+  .arrow-icon-left {
+    @apply hover:translate-x-[-8px];
+  }
+  .arrow-icon-right {
+    @apply hover:translate-x-[8px];
   }
   .change-or-rain-box {
     @apply h-6 text-blue-600;

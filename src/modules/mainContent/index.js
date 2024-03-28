@@ -4,14 +4,6 @@ import displayWeatherSummary from "./weatherSummary.js";
 import displayTodaysWeatherInfo from "./todaysWeatherInfo.js";
 import displayNext24HoursForecast from "./next24HoursForecast.js";
 import displayFutureDaysForecast from "./futureDaysForecast.js";
-import conditions from "./conditions.js";
-
-const addBackgroundImage = (weatherCondition) => {
-  const body = document.querySelector("body");
-  body.className =
-    "m-0 box-border text-slate-200 text-lg bg-default bg-center bg-cover bg-no-repeat";
-  // body.className = conditions[weatherCondition];
-};
 
 const mainContent = (weatherData) => {
   const { isLoading, isError, displayUnit } = weatherData;
@@ -39,8 +31,6 @@ const mainContent = (weatherData) => {
   } = weatherData.data;
 
   console.log("Updating content for location", todaysWeatherSummary.location);
-
-  // addBackgroundImage(todaysWeatherSummary.conditionText);
 
   const weatherSummaryElement = displayWeatherSummary(
     displayUnit,

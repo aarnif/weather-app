@@ -2,15 +2,9 @@ import weatherData from "./data.js";
 import dataService from "./services/data.js";
 import displayService from "./services/display.js";
 
-const app = () => {
-  const defaultLocation = "Helsinki"; // When the page loads for the first time
-  const searchForm = document.getElementById("search-form");
-  const changeDisplayUnitButton = document.getElementById(
-    "change-display-unit"
-  );
-
+const showWeatherData = (location) => {
   dataService
-    .getAllWeatherData(defaultLocation)
+    .getAllWeatherData(location)
     .then((data) => {
       weatherData.isLoading = false;
       weatherData.isError = false;
@@ -25,6 +19,16 @@ const app = () => {
       console.error(error);
       displayService.updatePage(weatherData);
     });
+};
+
+const app = () => {
+  const defaultLocation = "Helsinki"; // When the page loads for the first time
+  const searchForm = document.getElementById("search-form");
+  const changeDisplayUnitButton = document.getElementById(
+    "change-display-unit"
+  );
+
+  showWeatherData(defaultLocation);
 
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -34,24 +38,7 @@ const app = () => {
     console.log("Search location:", location);
     console.log(weatherData);
 
-    displayService.updatePage(weatherData);
-
-    dataService
-      .getAllWeatherData(location)
-      .then((data) => {
-        weatherData.isLoading = false;
-        weatherData.isError = false;
-        weatherData.data = data;
-        console.log(weatherData);
-        displayService.updatePage(weatherData);
-      })
-      .catch((error) => {
-        weatherData.isLoading = false;
-        weatherData.isError = true;
-        weatherData.data = null;
-        console.error(error);
-        displayService.updatePage(weatherData);
-      });
+    showWeatherData(location);
   });
 
   changeDisplayUnitButton.addEventListener("click", () => {
