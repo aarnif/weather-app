@@ -115,6 +115,7 @@ const createHoursList = (displayUnit, next24HourForecast) => {
 const displayNext24HoursForecast = (displayUnit, next24HourForecast) => {
   const hoursDiv = document.createElement("div");
   hoursDiv.id = "next-24-hours-forecast";
+  hoursDiv.className = "animate-emerge-down";
   const hoursList = createHoursList(displayUnit, next24HourForecast);
   hoursDiv.appendChild(hoursList);
 
