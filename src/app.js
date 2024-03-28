@@ -2,17 +2,15 @@ import weatherData from "./data.js";
 import dataService from "./services/data.js";
 import displayService from "./services/display.js";
 
-let index = 0;
-
 const app = () => {
-  const location = "Helsinki";
+  const defaultLocation = "Helsinki"; // When the page loads for the first time
   const searchForm = document.getElementById("search-form");
   const changeDisplayUnitButton = document.getElementById(
     "change-display-unit"
   );
 
   dataService
-    .getAllWeatherData(location)
+    .getAllWeatherData(defaultLocation)
     .then((data) => {
       weatherData.isLoading = false;
       weatherData.isError = false;

@@ -4,10 +4,22 @@
 
 @layer base {
   body {
-    @apply m-0 box-border text-slate-700 text-lg;
+    @apply m-0 box-border text-slate-50 text-xl bg-default bg-center bg-cover 2xl:bg-no-repeat;
   }
   #wrapper {
     @apply flex flex-col h-screen;
+  }
+  .box-style {
+    @apply bg-slate-400 bg-opacity-50 rounded-lg border-2 border-slate-50 border-opacity-0;
+  }
+  .transition-effect {
+    @apply transition duration-200 ease-in-out;
+  }
+  .hover-effect {
+    @apply hover:border-slate-50;
+  }
+  .active-effect {
+    @apply active:scale-95;
   }
   #header {
     @apply w-full flex justify-center items-center;
@@ -19,38 +31,43 @@
     @apply flex-grow max-w-[1600px] flex justify-between items-center mt-8 mx-16 px-6;
   }
   #search-form {
-    @apply flex items-center m-2 p-2 border rounded-xl
-    bg-slate-200 bg-opacity-50 rounded-lg
-     hover:border-slate-700 active:border-slate-700 focus-within:border-slate-700 
-     text-slate-500 hover:text-slate-700 active:text-slate-700 focus-within:text-slate-700;
+    @apply flex items-center m-2 px-2 box-style border
+    hover-effect transition-effect;
   }
   .search-icon {
     @apply min-w-6 min-h-6 fill-current;
   }
   .search-input {
-    @apply min-w-96 px-2 bg-slate-100 bg-opacity-50 rounded-xl focus:outline-none;
+    @apply min-w-96 p-2 bg-slate-100 bg-opacity-0 rounded-xl text-slate-50 focus:outline-none focus:bg-opacity-0;
+  }
+  .search-input::placeholder {
+    @apply text-slate-50;
   }
   #change-display-unit {
-    @apply w-36 flex justify-center items-center p-2 border rounded-xl
-    bg-slate-200 bg-opacity-50 rounded-lg
-     text-slate-500 hover:border-slate-700 active:border-slate-700
-    hover:text-slate-700 active:scale-95 transition duration-200 ease-in-out;
+    @apply w-36 flex justify-center items-center p-2 box-style hover-effect
+    active:border-slate-700 active-effect transition-effect;
   }
   #content {
     @apply flex-grow;
   }
+  .weather-cummary-container {
+    @apply w-full flex flex-col items-center mt-10;
+  }
+  .weather-summary-content {
+    @apply min-w-[400px] flex flex-col justify-center items-center py-6 box-style;
+  }
   .hours-list-container {
-    @apply flex justify-center items-center my-16 mx-16;
+    @apply flex justify-center items-center my-8 mx-16;
   }
   .hours-list-content {
-    @apply max-w-[1000px] flex justify-center items-center py-12 px-6 bg-slate-200 bg-opacity-50 rounded-lg
+    @apply max-w-[1000px] flex justify-center items-center py-12 px-6 box-style
     2xl:max-w-[1600px];
   }
   .hours-list {
     @apply flex flex-wrap justify-center;
   }
   .arrow-icon {
-    @apply w-14 fill-current text-slate-500 hover:text-slate-700 active:scale-95 transition duration-200 ease-in-out;
+    @apply w-14 fill-current hover:text-slate-600 active-effect transition-effect;
   }
   .change-or-rain-box {
     @apply h-6 text-blue-600;
@@ -63,7 +80,7 @@
     2xl:max-w-[760px] 2xl:mr-[20px] 2xl:items-start;
   }
   .future-forecast-content {
-    @apply flex-grow h-[500px] max-w-[1000px] px-8 flex justify-center bg-slate-200 bg-opacity-50 rounded-lg;
+    @apply flex-grow h-[450px] max-w-[1000px] px-8 flex justify-center items-center box-style;
   }
   .future-forecast-list {
     @apply flex-grow max-w-[1000px] flex flex-col justify-center items-center;
@@ -84,9 +101,9 @@
     @apply flex-grow flex justify-center items-center mb-16 2xl:max-w-[760px] 2xl:ml-[20px];
   }
   .todays-weather-content {
-    @apply flex-grow h-[500px] max-w-[1000px] flex justify-center items-center bg-slate-200 bg-opacity-50 rounded-lg;
+    @apply flex-grow h-[450px] max-w-[1000px] flex justify-center items-center box-style;
   }
   .weather-info-row {
-    @apply flex-grow flex justify-around items-center mx-8 mb-4 pb-2 border-b border-slate-300 last:border-none;
+    @apply flex-grow flex justify-around items-center mx-8 my-4 pb-2 border-b border-slate-300 last:border-none;
   }
 }

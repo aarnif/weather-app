@@ -41,9 +41,9 @@ const displayFutureDaysForecast = (displayUnit, futureDaysForecast) => {
     daysWeatherInfo.className = "future-forecast-list-row-items";
 
     const avgTemp =
-      displayUnit === "Celsius" ? day.averageTempC : day.averageTempF;
-    const minTemp = displayUnit === "Celsius" ? day.minTempC : day.minTempF;
-    const maxTemp = displayUnit === "Celsius" ? day.maxTempC : day.maxTempF;
+      displayUnit === "Celcius" ? day.averageTempC : day.averageTempF;
+    const minTemp = displayUnit === "Celcius" ? day.minTempC : day.minTempF;
+    const maxTemp = displayUnit === "Celcius" ? day.maxTempC : day.maxTempF;
 
     const daysWeatherInfoItems = [
       day.date,

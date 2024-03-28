@@ -1,6 +1,10 @@
 const displayWeatherSummary = (displayUnit, todaysWeatherSummary) => {
-  const weatherSummaryDiv = document.createElement("div");
-  weatherSummaryDiv.className = "w-full flex flex-col items-center mt-14";
+  const weatherSummaryContainer = document.createElement("div");
+  weatherSummaryContainer.className = "weather-cummary-container";
+
+  const weatherSummaryContent = document.createElement("div");
+  weatherSummaryContent.className = "weather-summary-content";
+
   const locationTitle = document.createElement("h2");
   locationTitle.className = "m-2 text-6xl font-bold";
   locationTitle.textContent = todaysWeatherSummary.location;
@@ -52,12 +56,14 @@ const displayWeatherSummary = (displayUnit, todaysWeatherSummary) => {
 
   highAndLowTemp.appendChild(lowTemp);
 
-  weatherSummaryDiv.appendChild(locationTitle);
-  weatherSummaryDiv.appendChild(temperatureContainer);
-  weatherSummaryDiv.appendChild(condition);
-  weatherSummaryDiv.appendChild(highAndLowTemp);
+  weatherSummaryContent.appendChild(locationTitle);
+  weatherSummaryContent.appendChild(temperatureContainer);
+  weatherSummaryContent.appendChild(condition);
+  weatherSummaryContent.appendChild(highAndLowTemp);
 
-  return weatherSummaryDiv;
+  weatherSummaryContainer.appendChild(weatherSummaryContent);
+
+  return weatherSummaryContainer;
 };
 
 export default displayWeatherSummary;
