@@ -27,12 +27,17 @@ module.exports = {
           "75%": { opacity: "0", transform: "translateX(50px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        rotateAndScale: {
+          "0%": { opacity: "0", transform: "rotate(0) scale(1)" },
+          "100%": { opacity: "1", transform: "rotate(360deg) scale(1.5)" },
+        },
       },
       animation: {
         "emerge-up": "emergeFromUp 1s ease-in-out",
         "emerge-down": "emergeFromDown 1s ease-in-out",
         "emerge-left": "emergeFromLeft 1s ease-in-out",
         "emerge-right": "emergeFromRight 1s ease-in-out",
+        "rotate-and-scale": "rotateAndScale 500ms ease-in-out forwards",
       },
       backgroundImage: {
         default: "url('assets/images/backgrounds/default.png')",

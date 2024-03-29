@@ -49,7 +49,7 @@ const getAllWeatherData = async (location) => {
     highTempC: forecast.forecast.forecastday[0].day.maxtemp_c,
     highTempF: forecast.forecast.forecastday[0].day.maxtemp_f,
     conditionText: currentWeather.current.condition.text,
-    conditionIcon: currentWeather.current.condition.icon,
+    conditionIcon: "https:" + currentWeather.current.condition.icon, // To get the path to work when creating a build
   };
 
   const todaysWeatherInfo = {
@@ -86,7 +86,7 @@ const getAllWeatherData = async (location) => {
         averageTempC: day.day.avgtemp_c,
         averageTempF: day.day.avgtemp_f,
         conditionText: day.day.condition.text,
-        conditionIcon: day.day.condition.icon,
+        conditionIcon: "https:" + day.day.condition.icon, // To get the path to work when creating a build
         changeOfRain: day.day.daily_chance_of_rain,
         changeOfSnow: day.day.daily_chance_of_snow,
       };

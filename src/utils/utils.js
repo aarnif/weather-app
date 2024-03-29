@@ -6,6 +6,7 @@ const extract24HourWeatherInfo = (forecast) => {
   let hoursArray = [];
   forecast.forecast.forecastday.map((object) => {
     for (let i = 0; i < 24; ++i) {
+      object.hour[i].condition.icon = "https:" + object.hour[i].condition.icon; // To get the path to work when creating a build
       hoursArray.push(object.hour[i]);
     }
   });
