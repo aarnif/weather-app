@@ -4,6 +4,13 @@ import displayWeatherSummary from "./weatherSummary.js";
 import displayTodaysWeatherInfo from "./todaysWeatherInfo.js";
 import displayNext24HoursForecast from "./next24HoursForecast.js";
 import displayFutureDaysForecast from "./futureDaysForecast.js";
+import conditions from "./conditions.js";
+
+const changeBackgroundImage = (weatherCondition) => {
+  const body = document.querySelector("body");
+  const condition = conditions[weatherCondition];
+  body.className = condition;
+};
 
 const mainContent = (weatherData) => {
   const { isLoading, isError, displayUnit } = weatherData;
@@ -31,6 +38,8 @@ const mainContent = (weatherData) => {
   } = weatherData.data;
 
   console.log("Updating content for location", todaysWeatherSummary.location);
+
+  changeBackgroundImage(todaysWeatherSummary.conditionText);
 
   const weatherSummaryElement = displayWeatherSummary(
     displayUnit,
