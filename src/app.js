@@ -3,9 +3,11 @@ import dataService from "./services/data.js";
 import displayService from "./services/display.js";
 
 const showWeatherData = (location) => {
+  console.log("Fetching weather data for location:", location);
   dataService
     .getAllWeatherData(location)
     .then((data) => {
+      console.log("Weather data fetched successfully:", data);
       weatherData.isLoading = false;
       weatherData.isError = false;
       weatherData.data = data;
@@ -13,10 +15,10 @@ const showWeatherData = (location) => {
       displayService.updatePage(weatherData);
     })
     .catch((error) => {
+      console.error("Error fetching weather data:", error);
       weatherData.isLoading = false;
       weatherData.isError = true;
       weatherData.data = null;
-      console.error(error);
       displayService.updatePage(weatherData);
     });
 };
