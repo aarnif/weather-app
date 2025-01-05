@@ -11,7 +11,7 @@ The project is part of the [The Odin Project's](https://www.theodinproject.com/)
 
 ## Live Preview
 
-[WEATHER APP](https://aarnif.github.io/odin-weather-app/)
+[WEATHER APP](https://aarnif.github.io/weather-app/)
 
 ## Technologies
 
@@ -28,11 +28,11 @@ Image of the home page.
 ## Instructions
 
 ```
-HTTPS - git clone https://github.com/aarnif/odin-weather-app.git
+HTTPS - git clone https://github.com/aarnif/weather-app.git
 
-SSH - git clone git@github.com:aarnif/odin-weather-app.git
+SSH - git clone git@github.com:aarnif/weather-app.git
 
-cd odin-weather-app
+cd weather-app
 
 npm install
 
