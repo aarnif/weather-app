@@ -35,7 +35,7 @@
   }
   #search-form {
     @apply flex items-center m-2 px-2 box-style border
-    hover-effect transition-effect;
+    hover-effect transition-effect focus-within:border-slate-50;
   }
   .search-icon {
     @apply min-w-6 min-h-6 fill-current;
