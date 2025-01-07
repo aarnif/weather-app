@@ -11,7 +11,7 @@ The project is part of the [The Odin Project's](https://www.theodinproject.com/)
 
 ## Live Preview
 
-[WEATHER APP](https://aarnif.github.io/weather-app/)
+[WEATHER APP](https://weather-app-aarnif.netlify.app)
 
 ## Technologies
 
