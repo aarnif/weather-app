@@ -6,12 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve",
-    "build": "webpack",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aarnif/odin-weather-app.git"
+    "url": "git+https://github.com/aarnif/weather-app.git"
   },
   "keywords": [],
   "author": "",
