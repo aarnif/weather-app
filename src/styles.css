@@ -31,24 +31,24 @@
     @apply flex-grow text-4xl font-bold;
   }
   #header-content {
-    @apply flex-grow max-w-[1600px] flex flex-col lg:flex-row justify-between items-center gap-4;
+    @apply flex-grow max-w-[1600px] flex flex-col sm:flex-row justify-between items-center gap-4;
   }
   #search-form {
     @apply w-full flex items-center px-2 box-style border
     hover-effect transition-effect focus-within:border-slate-50;
   }
   .search-icon {
-    @apply min-w-6 min-h-6 fill-current;
+    @apply w-5 h-5 sm:w-6 sm:h-6 fill-current;
   }
   .search-input {
-    @apply w-full p-2 bg-slate-100 bg-opacity-0 rounded-xl text-slate-50 focus:outline-none focus:bg-opacity-0;
+    @apply w-full p-2 bg-slate-100 bg-opacity-0 rounded-xl text-base sm:text-lg xl:text-xl text-slate-50 focus:outline-none focus:bg-opacity-0;
   }
   .search-input::placeholder {
     @apply text-slate-50;
   }
   #change-display-unit {
-    @apply w-full min-w-[200px] lg:max-w-[200px] flex justify-center items-center p-2 box-style hover-effect
-    active:border-slate-700 active-effect transition-effect;
+    @apply w-full min-w-[200px] sm:max-w-[200px] flex justify-center items-center p-2 box-style hover-effect
+    active:border-slate-700 active-effect transition-effect text-base sm:text-lg xl:text-xl;
   }
   #content {
     @apply w-full max-w-[1600px] flex-grow flex justify-center items-center;
