@@ -15,6 +15,7 @@ const changeBackgroundImage = (weatherCondition) => {
 const mainContent = (weatherData) => {
   const { isLoading, isError, displayUnit } = weatherData;
   const mainContentDiv = document.createElement("div");
+  mainContentDiv.id = "main-content";
 
   if (isLoading) {
     console.log("Loading content...");

@@ -1,6 +1,6 @@
 const displayWeatherSummary = (displayUnit, todaysWeatherSummary) => {
   const weatherSummaryContainer = document.createElement("div");
-  weatherSummaryContainer.className = "weather-cummary-container";
+  weatherSummaryContainer.className = "weather-summary-container";
 
   const weatherSummaryContent = document.createElement("div");
   weatherSummaryContent.className = "weather-summary-content";
