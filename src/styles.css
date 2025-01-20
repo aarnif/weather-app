@@ -7,7 +7,7 @@
     @apply m-0 box-border text-slate-50 text-xl;
   }
   #wrapper {
-    @apply p-8 w-full min-h-screen flex flex-col justify-center items-center;
+    @apply p-4 lg:p-8 w-full min-h-screen flex flex-col justify-center items-center;
   }
   .loading-icon {
     @apply relative top-[-150px] w-20 h-20 fill-current animate-spin;
@@ -31,27 +31,27 @@
     @apply flex-grow text-4xl font-bold;
   }
   #header-content {
-    @apply flex-grow max-w-[1600px] flex flex-col lg:flex-row justify-between items-center;
+    @apply flex-grow max-w-[1600px] flex flex-col lg:flex-row justify-between items-center gap-4;
   }
   #search-form {
-    @apply flex items-center m-2 px-2 box-style border
+    @apply w-full flex items-center px-2 box-style border
     hover-effect transition-effect focus-within:border-slate-50;
   }
   .search-icon {
     @apply min-w-6 min-h-6 fill-current;
   }
   .search-input {
-    @apply min-w-96 p-2 bg-slate-100 bg-opacity-0 rounded-xl text-slate-50 focus:outline-none focus:bg-opacity-0;
+    @apply w-full p-2 bg-slate-100 bg-opacity-0 rounded-xl text-slate-50 focus:outline-none focus:bg-opacity-0;
   }
   .search-input::placeholder {
     @apply text-slate-50;
   }
   #change-display-unit {
-    @apply w-36 flex justify-center items-center p-2 box-style hover-effect
+    @apply w-full min-w-[200px] lg:max-w-[200px] flex justify-center items-center p-2 box-style hover-effect
     active:border-slate-700 active-effect transition-effect;
   }
   #content {
-    @apply flex-grow max-w-[2000px] flex justify-center items-center;
+    @apply w-full max-w-[1600px] flex-grow flex justify-center items-center;
   }
   #main-content {
     @apply flex-grow flex flex-col items-center;
@@ -60,16 +60,19 @@
     @apply w-full flex flex-col items-center mt-8 animate-emerge-up;
   }
   .weather-summary-content {
-    @apply min-w-[400px] flex flex-col justify-center items-center py-6 box-style;
+    @apply w-full flex-grow min-w-[400px] flex flex-col justify-center items-center py-6 box-style;
+  }
+  #next-24-hours-forecast {
+    @apply w-full flex justify-center items-center;
   }
   .hours-list-container {
-    @apply flex justify-center items-center my-4;
+    @apply w-full flex justify-center items-center my-4;
   }
   .hours-list-content {
-    @apply flex justify-center items-center py-12 px-6 box-style;
+    @apply w-full flex justify-center items-center py-12 px-6 box-style;
   }
   .hours-list {
-    @apply flex flex-wrap justify-center;
+    @apply w-full flex flex-wrap justify-center;
   }
   .arrow-icon {
     @apply w-14 fill-current hover:translate-x-2 active-effect transition-effect;
