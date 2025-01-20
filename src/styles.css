@@ -69,13 +69,13 @@
     @apply w-full flex justify-center items-center my-4;
   }
   .hours-list-content {
-    @apply w-full flex justify-center items-center py-12 px-6 box-style;
+    @apply w-full flex justify-center items-center py-2 sm:py-4 xl:py-8 px-2 sm:px-4 xl:px-6 box-style;
   }
   .hours-list {
-    @apply w-full flex flex-wrap justify-center;
+    @apply w-full flex justify-center items-center;
   }
   .arrow-icon {
-    @apply w-14 fill-current hover:translate-x-2 active-effect transition-effect;
+    @apply w-7 h-7 sm:w-10 sm:h-10 xl:w-12 xl:h-12 fill-current hover:translate-x-2 active-effect transition-effect;
   }
   .arrow-icon-left {
     @apply hover:translate-x-[-8px];
@@ -84,7 +84,7 @@
     @apply hover:translate-x-[8px];
   }
   .change-or-rain-box {
-    @apply h-6 text-blue-600;
+    @apply h-4 sm:h-5 xl:h-6 text-blue-600 text-xs sm:text-sm xl:text-base;
   }
   .future-forecast-and-todays-weather-container {
     @apply w-full flex flex-col xl:flex-row xl:justify-center mb-4 gap-4;

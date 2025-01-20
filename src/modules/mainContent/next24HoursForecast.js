@@ -26,7 +26,7 @@ const updateHoursList = (displayUnit, next24HourForecast) => {
 };
 
 const icon = (iconElement, id, callback) => {
-  const iconContainer = document.createElement("li");
+  const iconContainer = document.createElement("div");
   const iconButton = document.createElement("button");
   iconContainer.className = "flex items-center justify-center";
   iconElement.id = id;
@@ -47,7 +47,7 @@ const createHoursList = (displayUnit, next24HourForecast) => {
   const hoursListContent = document.createElement("div");
   hoursListContent.className = "hours-list-content";
 
-  const hoursList = document.createElement("ul");
+  const hoursList = document.createElement("div");
   hoursList.className = "hours-list";
 
   const leftArrowIcon = icon(leftArrow(), "left-arrow", () =>
@@ -67,7 +67,8 @@ const createHoursList = (displayUnit, next24HourForecast) => {
 
   hoursArray.forEach((hour) => {
     const singleHour = document.createElement("ul");
-    singleHour.className = "min-w-[100px] flex flex-col items-center m-2";
+    singleHour.className =
+      "flex-grow flex flex-col items-center m-2 text-sm sm:text-base xl:text-lg";
     const time = hour.time.split(" ")[1]
       ? hour.time.split(" ")[1]
       : hour.time.split(" ")[0];
@@ -86,6 +87,7 @@ const createHoursList = (displayUnit, next24HourForecast) => {
         listItem.textContent = item;
       } else if (item === hour.condition.icon) {
         const weatherIcon = document.createElement("img");
+        weatherIcon.className = "w-8 h-8 sm:w-12 sm:h-12 xl:w-16 xl:h-16";
         weatherIcon.src = item;
         listItem.appendChild(weatherIcon);
       } else if (item === hour.chance_of_rain) {
