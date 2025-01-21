@@ -3,7 +3,19 @@ import leftArrow from "../icons/arrowLeft.js";
 import rightArrow from "../icons/arrowRight.js";
 
 let index = 0;
-const howManyHoursIsShown = 12;
+
+const calculateHowManyHoursIsShown = (windowWidth) => {
+  let howManyHoursIsShown = 12;
+  if (windowWidth <= 640) {
+    howManyHoursIsShown = 5;
+  } else if (windowWidth <= 768) {
+    howManyHoursIsShown = 8;
+  } else if (windowWidth <= 1024) {
+    howManyHoursIsShown = 10;
+  }
+
+  return howManyHoursIsShown;
+};
 
 const handleLeftArrowClick = (displayUnit, next24HourForecast) => {
   console.log("Left arrow clicked");
@@ -11,7 +23,11 @@ const handleLeftArrowClick = (displayUnit, next24HourForecast) => {
   updateHoursList(displayUnit, next24HourForecast);
 };
 
-const handleRightArrowClick = (displayUnit, next24HourForecast) => {
+const handleRightArrowClick = (
+  displayUnit,
+  next24HourForecast,
+  howManyHoursIsShown
+) => {
   console.log("Right arrow clicked");
   index + howManyHoursIsShown === 24 ? index : index++;
   updateHoursList(displayUnit, next24HourForecast);
@@ -40,7 +56,8 @@ const icon = (iconElement, id, callback) => {
   return iconContainer;
 };
 
-const createHoursList = (displayUnit, next24HourForecast) => {
+export const createHoursList = (displayUnit, next24HourForecast) => {
+  const howManyHoursIsShown = calculateHowManyHoursIsShown(window.innerWidth);
   const hoursListContainer = document.createElement("div");
   hoursListContainer.className = "hours-list-container";
 
@@ -54,7 +71,7 @@ const createHoursList = (displayUnit, next24HourForecast) => {
     handleLeftArrowClick(displayUnit, next24HourForecast)
   );
   const rightArrowIcon = icon(rightArrow(), "right-arrow", () =>
-    handleRightArrowClick(displayUnit, next24HourForecast)
+    handleRightArrowClick(displayUnit, next24HourForecast, howManyHoursIsShown)
   );
 
   let hoursArray = utils.sliceArray(
