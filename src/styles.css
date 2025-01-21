@@ -111,7 +111,7 @@
     @apply w-full my-1 sm:my-2 xl:my-4 flex justify-center items-center text-sm sm:text-lg xl:text-xl;
   }
   .todays-weather-container {
-    @apply flex-grow flex justify-center items-center animate-emerge-right;
+    @apply flex-grow flex justify-center items-center animate-emerge-right text-sm sm:text-lg xl:text-xl;
   }
   .todays-weather-content {
     @apply flex-grow h-full flex justify-center items-center box-style;
