@@ -25,7 +25,7 @@ const convertToMetersPerSecond = (windspeedKmHour) => {
 };
 
 const getWeekday = (date) => {
-  return format(date, "EEEE");
+  return format(date, "E");
 };
 
 const sliceArray = (index, array, howMany) => {
