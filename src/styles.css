@@ -34,7 +34,7 @@
     @apply flex-grow max-w-[1600px] flex flex-col sm:flex-row justify-between items-center gap-4;
   }
   #search-form {
-    @apply w-full flex items-center px-2 box-style border
+    @apply w-full max-w-[600px] flex items-center px-2 box-style border
     hover-effect transition-effect focus-within:border-slate-50;
   }
   .search-icon {
@@ -105,10 +105,10 @@
     @apply future-forecast-list-row my-2 border-none;
   }
   .future-forecast-list-row-items {
-    @apply flex-grow flex justify-around items-center;
+    @apply my-1 sm:my-2 xl:my-4 flex-grow flex justify-around items-center;
   }
   .future-forecast-list-item {
-    @apply w-full my-1 sm:my-2 xl:my-4 flex justify-center items-center text-sm sm:text-lg xl:text-xl;
+    @apply w-full flex justify-center items-center text-sm sm:text-lg xl:text-xl;
   }
   .todays-weather-container {
     @apply flex-grow flex justify-center items-center animate-emerge-right text-sm sm:text-lg xl:text-xl;
@@ -117,7 +117,7 @@
     @apply flex-grow h-full px-2 sm:px-4 xl:px-8 flex justify-center items-center box-style;
   }
   .weather-info-row {
-    @apply flex-grow flex justify-around items-center my-2 sm:my-4 pb-2 border-b border-slate-300 last:border-none;
+    @apply flex-grow flex justify-around items-center py-2 sm:py-4 border-b border-slate-300 last:border-none;
   }
   #footer {
     @apply w-full flex justify-center items-center;
