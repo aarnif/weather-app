@@ -120,15 +120,15 @@
     @apply flex-grow flex justify-around items-center my-2 sm:my-4 pb-2 border-b border-slate-300 last:border-none;
   }
   #footer {
-    @apply flex justify-center items-center;
+    @apply w-full flex justify-center items-center;
   }
   .footer-content {
-    @apply flex justify-center items-center box-style py-1 px-2 mb-2;
+    @apply w-full flex justify-center items-center box-style p-1;
   }
   .footer-text {
-    @apply pr-2;
+    @apply pr-2 text-sm sm:text-lg xl:text-xl;
   }
   .github-icon {
-    @apply w-6 fill-current text-slate-50 hover:animate-rotate-and-scale;
+    @apply w-4 sm:w-5 lg:w-6 fill-current text-slate-50 hover:animate-rotate-and-scale;
   }
 }
