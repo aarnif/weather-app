@@ -64,6 +64,7 @@ const displayFutureDaysForecast = (displayUnit, futureDaysForecast) => {
             ));
       } else if (item === day.conditionIcon) {
         const weatherIcon = document.createElement("img");
+        weatherIcon.className = "w-8 h-8 sm:w-12 sm:h-12 xl:w-16 xl:h-16";
         weatherIcon.src = item;
         daysWetherInfoItem.appendChild(weatherIcon);
       } else {

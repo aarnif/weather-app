@@ -7,7 +7,7 @@
     @apply m-0 box-border text-slate-50 text-xl;
   }
   #wrapper {
-    @apply flex flex-col h-screen;
+    @apply p-4 lg:p-8 w-full min-h-screen flex flex-col justify-center items-center;
   }
   .loading-icon {
     @apply relative top-[-150px] w-20 h-20 fill-current animate-spin;
@@ -31,46 +31,51 @@
     @apply flex-grow text-4xl font-bold;
   }
   #header-content {
-    @apply flex-grow max-w-[1600px] flex justify-between items-center mt-8 mx-16 px-6;
+    @apply flex-grow max-w-[1600px] flex flex-col sm:flex-row justify-between items-center gap-4;
   }
   #search-form {
-    @apply flex items-center m-2 px-2 box-style border
+    @apply w-full max-w-[600px] flex items-center px-2 box-style border
     hover-effect transition-effect focus-within:border-slate-50;
   }
   .search-icon {
-    @apply min-w-6 min-h-6 fill-current;
+    @apply w-5 h-5 sm:w-6 sm:h-6 fill-current;
   }
   .search-input {
-    @apply min-w-96 p-2 bg-slate-100 bg-opacity-0 rounded-xl text-slate-50 focus:outline-none focus:bg-opacity-0;
+    @apply w-full p-2 bg-slate-100 bg-opacity-0 rounded-xl text-base sm:text-lg xl:text-xl text-slate-50 focus:outline-none focus:bg-opacity-0;
   }
   .search-input::placeholder {
     @apply text-slate-50;
   }
   #change-display-unit {
-    @apply w-36 flex justify-center items-center p-2 box-style hover-effect
-    active:border-slate-700 active-effect transition-effect;
+    @apply w-full min-w-[200px] sm:max-w-[200px] flex justify-center items-center p-2 box-style hover-effect
+    active:border-slate-700 active-effect transition-effect text-base sm:text-lg xl:text-xl;
   }
   #content {
-    @apply flex-grow;
+    @apply w-full max-w-[1600px] flex-grow flex justify-center items-center;
   }
-  .weather-cummary-container {
-    @apply w-full flex flex-col items-center mt-10 animate-emerge-up;
+  #main-content {
+    @apply flex-grow flex flex-col items-center;
+  }
+  .weather-summary-container {
+    @apply w-full flex flex-col items-center mt-8 animate-emerge-up;
   }
   .weather-summary-content {
-    @apply min-w-[400px] flex flex-col justify-center items-center py-6 box-style;
+    @apply w-full flex-grow flex flex-col justify-center items-center py-4 sm:py-6 box-style;
+  }
+  #next-24-hours-forecast {
+    @apply w-full flex justify-center items-center;
   }
   .hours-list-container {
-    @apply flex justify-center items-center my-8 mx-16;
+    @apply w-full flex justify-center items-center my-4;
   }
   .hours-list-content {
-    @apply max-w-[1000px] flex justify-center items-center py-12 px-6 box-style
-    2xl:max-w-[1600px];
+    @apply w-full flex justify-center items-center py-2 sm:py-4 xl:py-8 px-2 sm:px-4 xl:px-6 box-style;
   }
   .hours-list {
-    @apply flex flex-wrap justify-center;
+    @apply w-full flex justify-center items-center;
   }
   .arrow-icon {
-    @apply w-14 fill-current hover:translate-x-2 active-effect transition-effect;
+    @apply w-7 h-7 sm:w-10 sm:h-10 xl:w-12 xl:h-12 fill-current hover:translate-x-2 active-effect transition-effect;
   }
   .arrow-icon-left {
     @apply hover:translate-x-[-8px];
@@ -79,52 +84,51 @@
     @apply hover:translate-x-[8px];
   }
   .change-or-rain-box {
-    @apply h-6 text-blue-600;
+    @apply h-4 sm:h-5 xl:h-6 text-blue-600 text-xs sm:text-sm xl:text-base;
   }
   .future-forecast-and-todays-weather-container {
-    @apply w-full flex flex-col 2xl:flex-row 2xl:justify-center px-16 mb-0;
+    @apply w-full flex flex-col xl:flex-row xl:justify-center mb-4 gap-4;
   }
   .future-forecast-container {
-    @apply flex-grow flex justify-center items-center
-    2xl:max-w-[760px] 2xl:mr-[20px] 2xl:items-start animate-emerge-left;
+    @apply flex-grow flex justify-center items-center xl:items-start animate-emerge-left;
   }
   .future-forecast-content {
-    @apply flex-grow h-[450px] max-w-[1000px] px-8 flex justify-center items-center box-style;
+    @apply flex-grow h-full px-2 sm:px-4 xl:px-8 flex justify-center items-center box-style;
   }
   .future-forecast-list {
-    @apply flex-grow max-w-[1000px] flex flex-col justify-center items-center;
+    @apply flex-grow flex flex-col justify-center items-center;
   }
   .future-forecast-list-row {
     @apply w-full flex justify-around items-center border-b border-slate-300 last:border-none;
   }
   .header-row {
-    @apply future-forecast-list-row mb-6 border-none;
+    @apply future-forecast-list-row my-2 border-none;
   }
   .future-forecast-list-row-items {
-    @apply flex-grow flex justify-around items-center;
+    @apply my-1 sm:my-2 xl:my-4 flex-grow flex justify-around items-center;
   }
   .future-forecast-list-item {
-    @apply w-full h-20 flex justify-center items-center;
+    @apply w-full flex justify-center items-center text-sm sm:text-lg xl:text-xl;
   }
   .todays-weather-container {
-    @apply flex-grow flex justify-center items-center 2xl:max-w-[760px] 2xl:ml-[20px] animate-emerge-right;
+    @apply flex-grow flex justify-center items-center animate-emerge-right text-sm sm:text-lg xl:text-xl;
   }
   .todays-weather-content {
-    @apply flex-grow h-[450px] max-w-[1000px] flex justify-center items-center box-style;
+    @apply flex-grow h-full px-2 sm:px-4 xl:px-8 flex justify-center items-center box-style;
   }
   .weather-info-row {
-    @apply flex-grow flex justify-around items-center mx-8 my-4 pb-2 border-b border-slate-300 last:border-none;
+    @apply flex-grow flex justify-around items-center py-2 sm:py-4 border-b border-slate-300 last:border-none;
   }
   #footer {
-    @apply flex justify-center items-center;
+    @apply w-full flex justify-center items-center;
   }
   .footer-content {
-    @apply flex justify-center items-center box-style py-1 px-2 mb-2;
+    @apply w-full max-w-[1600px] flex justify-center items-center box-style p-1;
   }
   .footer-text {
-    @apply pr-2;
+    @apply pr-2 text-sm sm:text-lg xl:text-xl;
   }
   .github-icon {
-    @apply w-6 fill-current text-slate-50 hover:animate-rotate-and-scale;
+    @apply w-4 sm:w-5 lg:w-6 fill-current text-slate-50 hover:animate-rotate-and-scale;
   }
 }

@@ -1,19 +1,20 @@
 const displayWeatherSummary = (displayUnit, todaysWeatherSummary) => {
   const weatherSummaryContainer = document.createElement("div");
-  weatherSummaryContainer.className = "weather-cummary-container";
+  weatherSummaryContainer.className = "weather-summary-container";
 
   const weatherSummaryContent = document.createElement("div");
   weatherSummaryContent.className = "weather-summary-content";
 
   const locationTitle = document.createElement("h2");
-  locationTitle.className = "m-2 text-6xl font-bold";
+  locationTitle.className =
+    "m-1 sm:m-2 text-3xl sm:text-4xl xl:text-6xl font-bold";
   locationTitle.textContent = todaysWeatherSummary.location;
 
   const temperatureContainer = document.createElement("div");
   temperatureContainer.className = "flex items-center";
 
   const temperatureNumber = document.createElement("h1");
-  temperatureNumber.className = "m-2 text-8xl";
+  temperatureNumber.className = "m-1 sm:m-2 text-4xl sm:text-6xl xl:text-8xl";
   temperatureNumber.textContent =
     displayUnit === "Celcius"
       ? todaysWeatherSummary.temperatureC
@@ -21,20 +22,21 @@ const displayWeatherSummary = (displayUnit, todaysWeatherSummary) => {
 
   const temperatureUnit = document.createElement("h3");
   temperatureUnit.textContent = displayUnit === "Celcius" ? " °C" : " °F";
-  temperatureUnit.className = "text-4xl";
+  temperatureUnit.className = "text-2xl sm:text-3xl xl:text-4xl";
 
   temperatureContainer.appendChild(temperatureNumber);
   temperatureContainer.appendChild(temperatureUnit);
 
   const condition = document.createElement("div");
-  condition.className = "m-2 text-4xl";
+  condition.className =
+    "m-1 sm:m-2 text-2xl sm:text-3xl xl:text-4xl font-semibold";
   condition.textContent = todaysWeatherSummary.conditionText;
 
   const highAndLowTemp = document.createElement("div");
   highAndLowTemp.className = "flex items-center";
 
   const highTemp = document.createElement("h4");
-  highTemp.className = "m-2 text-2xl";
+  highTemp.className = "m-1 sm:m-2 text-xl sm:text-2xl";
 
   highTemp.textContent = `High: ${
     displayUnit === "Celcius"
@@ -46,7 +48,7 @@ const displayWeatherSummary = (displayUnit, todaysWeatherSummary) => {
 
   const lowTemp = document.createElement("h4");
 
-  lowTemp.className = "m-2 text-2xl";
+  lowTemp.className = "m-1 sm:m-2 text-xl sm:text-2xl";
 
   lowTemp.textContent = `Low: ${
     displayUnit === "Celcius"

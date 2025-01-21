@@ -56,6 +56,16 @@ const app = () => {
       displayService.updatePage(weatherData);
     }
   });
+
+  const updateHoursBasedOnWidth = () => {
+    console.log("Window width:", window.innerWidth);
+    displayService.update24HourForecast(
+      weatherData.displayUnit,
+      weatherData.data.next24HourForecast.forecast24Hour
+    );
+  };
+
+  window.addEventListener("resize", updateHoursBasedOnWidth);
 };
 
 export default app;

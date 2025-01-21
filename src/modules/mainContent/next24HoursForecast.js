@@ -3,7 +3,19 @@ import leftArrow from "../icons/arrowLeft.js";
 import rightArrow from "../icons/arrowRight.js";
 
 let index = 0;
-const howManyHoursIsShown = 12;
+
+const calculateHowManyHoursIsShown = (windowWidth) => {
+  let howManyHoursIsShown = 12;
+  if (windowWidth <= 640) {
+    howManyHoursIsShown = 5;
+  } else if (windowWidth <= 768) {
+    howManyHoursIsShown = 8;
+  } else if (windowWidth <= 1024) {
+    howManyHoursIsShown = 10;
+  }
+
+  return howManyHoursIsShown;
+};
 
 const handleLeftArrowClick = (displayUnit, next24HourForecast) => {
   console.log("Left arrow clicked");
@@ -11,7 +23,11 @@ const handleLeftArrowClick = (displayUnit, next24HourForecast) => {
   updateHoursList(displayUnit, next24HourForecast);
 };
 
-const handleRightArrowClick = (displayUnit, next24HourForecast) => {
+const handleRightArrowClick = (
+  displayUnit,
+  next24HourForecast,
+  howManyHoursIsShown
+) => {
   console.log("Right arrow clicked");
   index + howManyHoursIsShown === 24 ? index : index++;
   updateHoursList(displayUnit, next24HourForecast);
@@ -26,7 +42,7 @@ const updateHoursList = (displayUnit, next24HourForecast) => {
 };
 
 const icon = (iconElement, id, callback) => {
-  const iconContainer = document.createElement("li");
+  const iconContainer = document.createElement("div");
   const iconButton = document.createElement("button");
   iconContainer.className = "flex items-center justify-center";
   iconElement.id = id;
@@ -40,21 +56,22 @@ const icon = (iconElement, id, callback) => {
   return iconContainer;
 };
 
-const createHoursList = (displayUnit, next24HourForecast) => {
+export const createHoursList = (displayUnit, next24HourForecast) => {
+  const howManyHoursIsShown = calculateHowManyHoursIsShown(window.innerWidth);
   const hoursListContainer = document.createElement("div");
   hoursListContainer.className = "hours-list-container";
 
   const hoursListContent = document.createElement("div");
   hoursListContent.className = "hours-list-content";
 
-  const hoursList = document.createElement("ul");
+  const hoursList = document.createElement("div");
   hoursList.className = "hours-list";
 
   const leftArrowIcon = icon(leftArrow(), "left-arrow", () =>
     handleLeftArrowClick(displayUnit, next24HourForecast)
   );
   const rightArrowIcon = icon(rightArrow(), "right-arrow", () =>
-    handleRightArrowClick(displayUnit, next24HourForecast)
+    handleRightArrowClick(displayUnit, next24HourForecast, howManyHoursIsShown)
   );
 
   let hoursArray = utils.sliceArray(
@@ -67,7 +84,8 @@ const createHoursList = (displayUnit, next24HourForecast) => {
 
   hoursArray.forEach((hour) => {
     const singleHour = document.createElement("ul");
-    singleHour.className = "min-w-[100px] flex flex-col items-center m-2";
+    singleHour.className =
+      "flex-grow flex flex-col items-center m-2 text-sm sm:text-base xl:text-lg";
     const time = hour.time.split(" ")[1]
       ? hour.time.split(" ")[1]
       : hour.time.split(" ")[0];
@@ -86,6 +104,7 @@ const createHoursList = (displayUnit, next24HourForecast) => {
         listItem.textContent = item;
       } else if (item === hour.condition.icon) {
         const weatherIcon = document.createElement("img");
+        weatherIcon.className = "w-8 h-8 sm:w-12 sm:h-12 xl:w-16 xl:h-16";
         weatherIcon.src = item;
         listItem.appendChild(weatherIcon);
       } else if (item === hour.chance_of_rain) {
